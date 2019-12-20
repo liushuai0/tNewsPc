@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>今日吉林</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/shouye/index.css" />
+
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="js/shouye/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/shouye/chajian/swiper.js" type="text/javascript" charset="utf-8"></script> <!-- 轮播组件 -->
+		<script src="js/shouye/chajian/jqPaginator.js" type="text/javascript" charset="utf-8"></script> <!-- 分页插件 -->
+		<script src="js/save.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div class="position-relative">
+			<div id="headerpage" class="">
+				<div class="">
+					<div class="" style="background-color: #f8f9fa !important;">
+
+
+						<div class="container">
+							<div class="row">
+								<div class="navbar navbar-light bg-light w-100" style="height: 110px;padding-top: 20px;padding-bottom: 20px;">
+									<img src="img/shouye/headerImg.png" class="h-100">
+									<div class="form-inline">
+										<input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="请输入关键字" value="" aria-label="Search">
+										<button class="btn btn-outline-success my-2 my-sm-0" id="submitBtn" type="submit">Search</button>
+									</div>
+									<div class="row">
+										<div class="d-flex flex-column align-items-center" id="weixin" data-toggle="popover" data-placement="bottom">
+											<img src="img/shouye/weixin.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+											<div style="font-size: 14px;">
+												微信
+											</div>
+										</div>
+										<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
+											<img src="img/shouye/weibo.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												微博
+											</div>
+										</div>
+										<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
+											<img src="img/shouye/shouji.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												客户端
+											</div>
+										</div>
+										<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
+											<img src="img/shouye/weibo.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												抖音
+											</div>
+										</div>
+										<div class="d-flex flex-column align-items-center" style="margin-left: 60px;margin-right: 20px;">
+											<img src="img/shouye/shouji.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												头条
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="h_top">
+						<div class="container position-relative d-flex align-items-center">
+							<ul class="daohanglan nav nav-pills" id="daohanglan" role="tablist">
+								<!-- <li class="nav-item" onclick="tiaozhuan(0)">
+									<a class="nav-link active" id="nav1" data-toggle="pill"  href="index.html">首页</a>
+								</li> -->
+							</ul>
+							<div class="bg-white" onclick="xialashow()" style="margin: 0 30px; width: 64px;">
+								<img src="img/jiahao.png" style="width: 25px;height: 25px;margin-left: 17px;">
+							</div>
+							<div class="dropdown jilinTop">
+								<button type="" class="bg-white dropdown-toggle" data-toggle="dropdown">
+									<div class="jilinTop">
+										<span>系列日报</span>
+										<img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;">
+									</div>
+								</button>
+								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
+									<a class="dropdown-item" href="http://jlrbszb.chinajilin.com.cn/paperindex.htm" target="_blank">
+										吉林日报
+									</a>
+									<a class="dropdown-item" href="http://epaper.1news.cc/ccrb/" target="_blank">
+										长春日报
+									</a>
+									<a class="dropdown-item" href="http://szb.shjnet.cn/" target="_blank">
+										江城日报
+									</a>
+									<a class="dropdown-item" href="http://www.spxww.com/nepaper/sprb/paperindex.htm" target="_blank">
+										四平日报
+									</a>
+									<a class="dropdown-item" href="http://read.0437.com/reader/" target="_blank">
+										辽源日报
+									</a>
+									<a class="dropdown-item" href="http://ipaper.hybrb.com/" target="_blank">
+										延边日报
+									</a>
+									<a class="dropdown-item" href="http://www.thrbs.com/" target="_blank">
+										通化日报
+									</a>
+									<a class="dropdown-item" href="http://szb.syxww.cn" target="_blank">
+										松原日报
+									</a>
+									<a class="dropdown-item" href="http://bcrbszb.bcxww.com/" target="_blank">
+										白城日报
+									</a>
+									<a class="dropdown-item" href="http://szb.cbsrb.com/" target="_blank">
+										长白山日报
+									</a>
+									<a class="dropdown-item" href="http://124.234.142.113/paperindex.htm" target="_blank">
+										城市晚报
+									</a>
+									<a class="dropdown-item" href="http://www.dyxw.com/pc/paper/layout/" target="_blank">
+										东亚经贸
+									</a>
+									<a class="dropdown-item" href="http://jlncb.wsszb.com/" target="_blank">
+										吉林农村报
+									</a>
+
+								</div>
+							</div>
+							<div class="dropdown jilinTop2">
+								<button type="" class="bg-white dropdown-toggle" data-toggle="dropdown">
+									<div class="jilinTop">
+										<span>集团报网</span>
+										<img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;">
+									</div>
+								</button>
+								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container ">
+						<div class="row position-absolute bg-white d-none" id='xialaNav' style=" z-index: 999;width: 855px;box-shadow:0px 15px 13px 0px rgba(155,13,21,0.4);">
+							<div class="d-flex bg-white flex-wrap" style="color: #535353;" id="otherNav">
+								<!-- <div class=" px-3" style="height: 40px;line-height: 40px;">
+									延边新闻
+								</div>
+								<div class="" style="height: 18px;margin-top: 6px;">
+									|
+								</div>
+								<div class=" px-3" style="height: 40px;line-height: 40px;">
+									延边新闻
+								</div> -->
+							</div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<img src="img/shouye/banner.jpg" class="" style="height: 240px;width: 100%;margin-top: 10px;">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container ">
+			<div class="row" style="margin-top: 15px;">
+				<div class="d-flex flex-column" style="margin-top: 18px;">
+					<div class="d-flex">
+						<img src="img/shouye/toutiaoImg.png" style="width: 70px;height: 70px;">
+						<div class="toutiaoNews" id="" style="margin-left: 20px;margin-right: 20px;">
+							<!-- 吉林省纪委省监委召开机关干部大会吉林省纪委省监委召开机关干部大会 -->
+							<div id="toutiaoTitle" style="margin-bottom: 5px;">
+
+							</div>
+							<div class="toutiaoNewsJJ" id='toutiaoTitleJJ'>
+
+							</div>
+						</div>
+						<div class="d-flex flex-column" id="toutiaoTitleM">
+							<span style="width: 14px;float: left;font-size:14px;color: #DA2027;">更多</span>
+							<img src="img/shouye/hengshowmore.png" style="width: 16px;height: 16px;">
+						</div>
+					</div>
+					<div class="d-flex position-relative" style="width:885px;height:50px;margin-top: 10px;border:1px solid rgba(238,238,238,1);border-radius:5px;">
+						<img src="img/shouye/jinrikuaixun.png" style="width: 60px; height: 27px;margin-top: 11px;margin-left: 20px;">
+						<span class="position-absolute" id="kuaixunTitle" style="font-weight:800;letter-spacing:8px;font-size:14px;color:rgba(255,255,255,1);left: 30px;top:14px">
+							<!-- 今日快讯 --></span>
+						<div class="gundongwenzi">
+							<!-- <ul class="list-unstyled" id="kuaixunList">
+								<!-- <li><a href="">我是111111111111111</a></li>
+								<li><a href="">我是22222222222222222</a></li>
+								<li><a href="">我是3</a></li> 
+							</ul> -->
+							<div class="boxabc">
+								<div class="winBox">
+									<ul class="scrollabc" id="kuaixunList">
+										<!-- <li><a href="#">时尚休闲裤68元</a></li>
+							      <li><a href="#">羊呢绒套衫38元</a></li>
+							      <li><a href="#">新款雪地靴88元</a></li> -->
+										<!-- <li><a href="#">加厚法兰绒108元</a></li>
+							      <li><a href="#">连裤袜19元2双</a></li> -->
+
+										<!-- <li><a href="#">时尚休闲裤68元</a></li>
+							      <li><a href="#">羊呢绒套衫38元</a></li>
+							      <li><a href="#">新款雪地靴88元</a></li> -->
+										<!-- <li><a href="#">加厚法兰绒108元</a></li>
+							      <li><a href="#">连裤袜19元2双</a></li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--------- 领导报道集 --------->
+				<div class="lingdaoCard">
+					<div class="lingdaoCard_title">
+						领导报道集
+					</div>
+					<div id="leaderList" class="row d-flex justify-content-around" style="border-top: 2px solid #C21B1F;padding-top: 10px;">
+
+					</div>
+				</div>
+			</div>
+			<!------------------------------------------- 荐读部分 ----------------------------------------------->
+			<div class="row" id="jinriTuiguang" style="margin-top: 10px;">
+				<div style="width:432px;height:141px;margin-right: 27px;">
+					<div id="jinriTitle" class="jinri">
+						<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+						<!-- 荐读 -->
+						<div class="position-absolute" id="jinriTitleM" style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 6px; font-size: 16px;font-weight: normal;">
+							更多
+							<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+						</div>
+					</div>
+					<img src="img/shouye/yaowenbottom.png" style="width: 440px;height: 15px;">
+					<div class="jinri_recommend">
+						<div style="color: #C21B1F;" id="jinriList1T">
+							<!-- 央行已经法定数字货币了？别信，辟谣了！ -->
+
+						</div>
+						<div class="overflow-hidden jinri_detail" style="font-size: 14px;" id="jinriList1C">
+							<!-- 20日，中国吉林网从央行网站获悉，近日该行发布“关于冒用人民银行名义发行或推广法定数字货币情况的公告”。公告内容.. -->
+						</div>
+					</div>
+					<div class="jinri_ul" id="jinriList">
+						<!-- 						<li style="color:#EB7D12;"><a href="">市委、市人民政府批准举办新闻网</a> </li>
+						<li><a href="">省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神</a></li>
+						<li><a href="">我省创建“红色孵化器”助推民营企业发展 </a></li>
+						<li><a href="">省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 </a></li> -->
+					</div>
+				</div>
+				<div class="" style="width:703px;height:389px;margin-left: 5px;">
+					<div class="" style="width: 703px;height: 389px;">
+						<div id="carouselExampleIndicators" class="carousel slide w-100" data-ride="carousel">
+							<!-- <ol class="carousel-indicators">
+								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+								<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+							</ol> -->
+							<div class="carousel-inner" id="shoyeSwiper">
+								<!-- <div class="carousel-item active">
+									<img class="d-block w-100" src="img/shouye/fangtanImg.png" alt="First slide">
+									
+								</div>
+								<div class="carousel-item">
+									<img class="d-block w-100" src="img/shouye/fangtanImg.png" alt="Second slide">
+									
+								</div>
+								<div class="carousel-item">
+									<img class="d-block w-100" src="img/shouye/fangtanImg.png" alt="Third slide">
+								</div> -->
+							</div>
+							<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!------------------------------------------- 今日推广部分结束 ----------------------------------------------->
+			<div class="row" style="margin-top: 20px;">
+				<img src="img/shouye/jujiaotopleft.png" class="jujiaoImg1">
+				<img src="img/shouye/jujiaotopcenter.png" class="jujiaoImg2">
+				<img src="img/shouye/jujiaotopright.png" class="jujiaoImg3">
+			</div>
+
+			<!--------------------------------------------- 3个聚焦图片结束 --------------------------------------------------->
+			<div class="row" style="margin-top: 20px;">
+
+				<div style="display: flex;flex-direction: column; width:284px;margin-right: 30px;">
+					<div id="jujiaoTitle" class="jinri">
+						<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+						<!-- 聚焦 -->
+
+					</div>
+					<img src="img/shouye/jujiaobottom.png" style="width:281px;height:14px;">
+					<img id="jujiaoImg" style="width:284px;height:187px;margin-top: 15px;">
+					<div class="jujiao_title" id="jujiaoList1T">
+						<!-- “吉林好人”2019年第三季度评选活动网络投票启动 -->
+					</div>
+					<div class="jujiao_content" id="jujiaoList">
+						<!-- 						<li><a href="" style="color:#EB7D12;">市委、市人民政府批准举办新闻网</a> </li>
+						<li><a href="">省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神</a></li>
+						<li><a href="">我省创建“红色孵化器”助推民营企业发展 </a></li>
+						<li><a href="">省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 </a></li> -->
+					</div>
+					<div class="" style="width:286px;margin-top: 15px;">
+						<div id="shenduTitle" class="jinri">
+							<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+							<!-- 深度 -->
+						</div>
+						<img src="img/shouye/jujiaobottom.png" style="width:281px;height:14px;margin-bottom: 15px;margin-top: 10px;">
+						<div class="" style="width:275px;">
+							<img id="shenduImg" style="width:284px;height:184px;">
+							<div class="jujiao_title" id="shenduList1T">
+								<!-- 2019年第三季度评选活动网络投票启动 -->
+							</div>
+							<div class="jujiao_content" id="shenduList">
+								<!-- <li><a href="" style="color:#EB7D12;">我省连续6个月向困难群众发放临时</a></li>
+								<li><a href=""> 68人主持的科研项目获省人才开发资 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示</a> </li>
+								<li><a href=""> 68人主持的科研项目获省人才开发资 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示</a> </li>
+								<li><a href=""> 我省连续6个月向困难群众发放临时 </a></li> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--------------------------------------------- 聚焦 深度专栏结束 --------------------------------------------------->
+				<div style="width: 510px;">
+					<div id="yaowenTitle" class="jinri">
+						<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+						<!-- 要闻 -->
+						<div class="position-absolute" id="yaowenTitleM" style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 6px; font-size: 16px;font-weight: normal;">
+							更多
+							<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+						</div>
+					</div>
+					<img src="img/shouye/yaowenbottom.png" style="width:511px;height:14px;">
+					<div class="yaowen_content1">
+						<div id="yanwenContent1T">
+							<!-- 省民政厅公布10月社会救助开展情况 -->
+						</div>
+						<div class="yaowen_content1_ul" id="yaowenList">
+							<!-- <li><a href=""> 省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 我省创建“红色孵化器”助推民营企业发展 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示
+									68人主持的科研项目获省人才开发资金资助 </a> </li>
+							<li><a href=""> 省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 我省创建“红色孵化器”助推民营企业发展 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示
+									68人主持的科研项目获省人才开发资金资助 </a></li>
+							<li><a href="">我省创建“红色孵化器”助推民营企业发展 </a></li>
+							<li><a href="">省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 </a></li> -->
+						</div>
+						<div class="fenxian">
+						</div>
+					</div>
+					<div class="yaowen_content2">
+						<div id="yanwenContent2T" class="yaowen_content1_title">
+
+						</div>
+						<div class="yaowen_content1_ul" id="yaowenList2">
+							<!-- <li><a href=""> 省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 我省创建“红色孵化器”助推民营企业发展 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示
+									68人主持的科研项目获省人才开发资金资助 </a> </li>
+							<li><a href=""> 省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 我省创建“红色孵化器”助推民营企业发展 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示
+									68人主持的科研项目获省人才开发资金资助 </a></li>
+							<li><a href="">我省创建“红色孵化器”助推民营企业发展 </a></li>
+							<li><a href="">省委宣讲团赴长春四平公主岭宣讲党的十九届四中全会精神 </a></li> -->
+						</div>
+						<div class="fenxian">
+
+						</div>
+					</div>
+					<div class="yaowen_content3">
+						<div id="yanwenContent3T" class="yaowen_content1_title">
+
+						</div>
+						<div class="yaowen_content1_ul" id="yaowenList3">
+
+						</div>
+						<div class="fenxian">
+
+						</div>
+					</div>
+					<div id="yaowen13" class="yaowen_bottom_two d-flex justify-content-between">
+						<!-- <div>
+							<img src="img/shouye/yaowenbottomtwo.png" style="width: 240px;height: 138px;">
+							<div class="yaowen_bottom_twotext">
+							
+								长春供热开启“ 云 ”时代
+							</div>
+						</div>
+						<div class="">
+							<img src="img/shouye/yaowenbottomtwo.png" style="width: 240px;height: 138px;">
+							<div class="yaowen_bottom_twotext">
+								长春供热开启“ 云 ”时代
+							</div>
+						</div> -->
+					</div>
+				</div>
+				<!--------------------------------------------- 要闻专栏结束 --------------------------------------------------->
+				<div id="" class="yaowen_rightNav">
+					<img src="img/shouye/yaowenrightnav.png" class="yaowen_rightNav_img1">
+					<img src="img/shouye/yaowenrightnav2.png" class="yaowen_rightNav_img2">
+					<div class="fangtan_Card">
+						<div class="jinri" id="fangtanTitle">
+							<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+							<div class="position-absolute" id='fangtanTitleM' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 30px; font-size: 16px;font-weight: normal;">
+								更多
+								<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+							</div>
+							<!-- 访谈 -->
+						</div>
+						<img src="img/shouye/jujiaobottom.png" style="width:302px;height:15px;margin-bottom: 15px;">
+						<div class="position-relative">
+							<img id="fangtanImg" style="width:308px;height: 178px;">
+							<div id="fangtanList1T" class="fangtan_Img_title">
+								<!-- 【专题】“理上网来·理论新境界” -->
+							</div>
+						</div>
+						<div class="fangtan_content" id="fangtanList">
+							<!-- <div class="fangtan_content_card d-flex"  style="margin-top: 17px;">
+								<img src="img/shouye/fangtancontentimg.png" style="width:120px;height:68px;margin-right: 15px;">
+								<div class="">
+									<div class="fangtan_content_card_t" style="color:rgba(194,27,31,1);">
+										习近平主席署名文章在希腊引发热烈反响
+									</div>
+									<div class="fangtan_content_card_d">
+										发表时间：2019-10-17 09:26
+									</div>
+								</div>
+							</div> -->
+
+
+						</div>
+					</div>
+				</div>
+				<!--------------------------------------------- 访谈专栏结束 --------------------------------------------------->
+			</div>
+
+			<div class="row d-flex flex-nowrap" style="margin-top: 10px;">
+
+				<div class="">
+					<img src="img/shouye/yanbiantopcenter.png" style="width: 840px;height: 80px;">
+					<div class="d-flex flex-nowrap" style="margin-top: 15px;">
+						<div class="" style="margin-right: 30px;width: 405px;">
+							<div class="jinri" style="width: 405px;" id="yanbianTitle7">
+								<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+								<!-- 延边新闻 -->
+								<div class="position-absolute" id='yanbianTitle7M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 30px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+							<img src="img/shouye/jujiaobottom.png" style="width:398px;height:20px;margin-bottom: 15px;">
+							<img id="yanbianImg7" style="width:404px;height:224px;margin-bottom: 15px;">
+							<div class="yanbiancontent" id="yanbianContentC7">
+								<!-- 2018年 9月，在东北振兴滚石上山、爬坡过坎的关键节点，习近平总书记赴东北考察... -->
+							</div>
+							<div class="yanbianshowMore">
+
+								<span id='newsquanwen7'>阅读全文</span>
+								<img src="img/shouye/showmore.png" style="width: 20px;height: auto;">
+							</div>
+							<div class="yanbian_ul" id="yanbianList7">
+
+							</div>
+						</div>
+
+						<div class="" style="width: 405px;">
+							<div class="jinri" style="width: 405px;" id="yanbianTitle8">
+								<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+								<!-- 江城新闻 -->
+								<div class="position-absolute" id='yanbianTitle8M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 30px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+							<img src="img/shouye/jujiaobottom.png" style="width:398px;height:20px;margin-bottom: 15px;">
+							<img id="yanbianImg8" style="width:404px;height:224px;margin-bottom: 15px;">
+							<div class="yanbiancontent" id="yanbianContentC8">
+								<!-- 2018年 9月，在东北振兴滚石上山、爬坡过坎的关键节点，习近平总书记赴东北考察... -->
+							</div>
+							<div class="yanbianshowMore">
+								<span id='newsquanwen8'>阅读全文</span>
+								<img src="img/shouye/showmore.png" style="width: 20px;height: auto;">
+							</div>
+							<div class="yanbian_ul" id="yanbianList8">
+								<!-- <li><a href="" style="color:#EB7D12;">我省连续6个月向困难群众发放临时</a></li>
+								<li><a href="">68人主持的科研项目获省人才开发资 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示</a> </li>
+								<li><a href="">68人主持的科研项目获省人才开发资 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示</a> </li> -->
+							</div>
+						</div>
+					</div>
+					<div class="d-flex flex-nowrap" style="margin-top: 20px;">
+						<div class="" style="margin-right: 30px;width: 405px;">
+							<div class="jinri" style="width: 405px;" id="yanbianTitle9">
+								<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+								<div class="position-absolute" id='yanbianTitle9M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 30px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+							<img src="img/shouye/jujiaobottom.png" style="width:398px;height:20px;margin-bottom: 15px;">
+							<img id="yanbianImg9" style="width:404px;height:224px;margin-bottom: 15px;">
+							<div class="yanbiancontent" id="yanbianContentC9">
+
+							</div>
+							<div class="yanbianshowMore">
+								<span id='newsquanwen9'>阅读全文</span>
+								<img src="img/shouye/showmore.png" style="width: 20px;height: auto;">
+							</div>
+							<div class="yanbian_ul" id="yanbianList9">
+
+							</div>
+						</div>
+
+						<div class="" style="width: 405px;">
+							<div class="jinri" style="width: 405px;" id="yanbianTitle10">
+								<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+								<div class="position-absolute" id='yanbianTitle10M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 30px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+							<img src="img/shouye/jujiaobottom.png" style="width:398px;height:20px;margin-bottom: 15px;">
+							<img id="yanbianImg10" style="width:404px;height:224px;margin-bottom: 15px;">
+							<div class="yanbiancontent" id="yanbianContentC10">
+
+							</div>
+							<div class="yanbianshowMore">
+								<span id='newsquanwen10'>阅读全文</span>
+								<img src="img/shouye/showmore.png" style="width: 20px;height: auto;">
+							</div>
+							<div class="yanbian_ul" id="yanbianList10">
+
+							</div>
+						</div>
+
+					</div>
+					<div class="">
+						<img src="img/shouye/gonganbottom.png" style="width: 850px;height: 81px;">
+					</div>
+					<!--------------------------------------------- 四中全会图片结束 --------------------------------------------------->
+
+					<div class=" d-flex flex-nowrap justify-content-between" style="margin-top: 20px;width: 850px;">
+						<!-- 人事 -->
+						<div class="">
+							<div class="renshi" id="renshiTitle13">
+								<img src="img/shouye/titleleft.png" style="width: 18px;height: 14px;">
+								<div class="position-absolute" id='yanbianTitle13M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 15px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+
+							<img src="img/shouye/jujiaobottom.png" style="width: 260.7px;height: 13.7px;">
+							<div class="renshi_title" id="renshiContentT13">
+								<!-- 东北全面振兴正夯基（壮丽70年 奋斗新时代） -->
+							</div>
+							<div class="renshi_content" id="renshiContentC13">
+								<!-- 2018年 9月，在东北振兴滚石上山、爬坡过坎的关键节点... -->
+							</div>
+							<div class="renshi_showMore" id='newsquanwen13'>
+								阅读全文
+								<img src="img/shouye/showmore.png" style="width: 16px;height: 9px;">
+							</div>
+							<div class="renshi_ul" id="renshiList13">
+								<!-- <li><a href="" style="color:#EB7D12;">我省连续6个月向困难群众发放临时</a></li>
+								<li><a href="">68人主持的科研项目获省人才开发资 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示</a> </li>
+								<li><a href="">68人主持的科研项目获省人才开发资 2020年度吉林省家庭服务职业培训示范基地初评合格名单公示</a> </li> -->
+							</div>
+						</div>
+						<!-- 身边楷模 -->
+						<div class="">
+							<div class="renshi" id="renshiTitle14">
+								<img src="img/shouye/titleleft.png" style="width: 18px;height: 14px;">
+								<div class="position-absolute" id='yanbianTitle14M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 15px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+							<img src="img/shouye/jujiaobottom.png" style="width: 260.7px;height: 13.7px;">
+							<div class="renshi_title" id="renshiContentT14">
+
+							</div>
+							<div class="renshi_content" id="renshiContentC14">
+
+							</div>
+							<div class="renshi_showMore" id='newsquanwen14'>
+								阅读全文
+								<img src="img/shouye/showmore.png" style="width: 16px;height: 9px;">
+							</div>
+							<div class="renshi_ul" id="renshiList14">
+
+							</div>
+						</div>
+						<!-- 财经观察 -->
+						<div class="">
+							<div class="renshi" id="renshiTitle15">
+								<img src="img/shouye/titleleft.png" style="width: 18px;height: 14px;">
+								<div class="position-absolute" id='yanbianTitle15M' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 15px; font-size: 16px;font-weight: normal;">
+									更多
+									<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+								</div>
+							</div>
+							<img src="img/shouye/jujiaobottom.png" style="width: 260.7px;height: 13.7px;">
+							<div class="renshi_title" id="renshiContentT15">
+
+							</div>
+							<div class="renshi_content" id="renshiContentC15">
+
+							</div>
+							<div class="renshi_showMore" id='newsquanwen15'>
+								阅读全文
+								<img src="img/shouye/showmore.png" style="width: 16px;height: 9px;">
+							</div>
+							<div class="renshi_ul" id="renshiList15">
+
+							</div>
+						</div>
+					</div>
+					<!---------------------------------------------人事 身边楷模 财经观察 结束 --------------------------------------------------->
+				</div>
+				<div class="" style="margin-left: 18px;">
+					<img src="img/shouye/xinwentopright.png" style="width: 300px;height: 80px;">
+					<!-- <img src="img/shouye/xinwentopright2.png" style="width: 300px;height: 90px;margin-top: 15px;"> -->
+					<div class="" style="margin-top: 32px;width: 300px;">
+						<div class="jinri" id="fabu" style="">
+							<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+							<div class="position-absolute" id='fabuM' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 25px; font-size: 16px;font-weight: normal;">
+								更多
+								<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+							</div>
+							<!-- 访谈 -->
+						</div>
+						<img src="img/shouye/jujiaobottom.png" style="width: 300px;height: 13.7px;margin-bottom: 15px;margin-top: 5px;">
+						<div class="" style="width: 295px;height: 173px;">
+
+							<img id="redianImg" style="width: 295px;height: 173px;" />
+
+						</div>
+
+						<div class="fabuClass" id="fabuTitle">
+							<!-- 长春供热开启“ 云 ”时代 -->
+						</div>
+
+						<div class="d-flex justify-content-between" id="fabutext2Cont">
+							<!-- 	<div>
+								<img src="img/shouye/yaowenbottomtwo.png" style="width: 130px;height: 70px;">
+								<div class="fabutext2">
+									长春供热开启.saf
+								</div>
+							</div>
+							<div>
+								<img src="img/shouye/yaowenbottomtwo.png" style="width: 130px;height: 70px;">
+								<div class="fabutext2">
+									长春供热开启...
+								</div>
+							</div> -->
+						</div>
+						<div style="display: flex;flex-direction: column;">
+							<div class="" style="">
+								<div class="xinwen_title" id="fabuContentT3">
+
+								</div>
+								<div class="xinwen_ul" id="fabuContentList">
+
+								</div>
+							</div>
+							<div class="">
+								<div class="xinwen_title" id="fabuContentT4" style="margin-top:15px">
+
+								</div>
+								<div class="xinwen_ul" id="fabuContentList2">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="" style="width: 300px;">
+						<div class="jinri" id="yingzhan" style="margin-top: 20px;">
+							<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+
+							<div class="position-absolute" id='yingzhanM' style="cursor:pointer;margin-bottom: 30px; top: 0px;right: 25px; font-size: 16px;font-weight: normal;">
+								更多
+								<img src="img/shouye/xiangyou.png" style="width: 26px;height: auto;margin-bottom: 5px;">
+							</div>
+
+						</div>
+						<img src="img/shouye/jujiaobottom.png" style="width: 300px;height: 13.7px;margin-bottom: 15px;margin-top: 5px;">
+
+						<div class="d-flex flex-wrap justify-content-between" id="yingzhanList">
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!--------------------------------------------- 新闻公安大交通结束 --------------------------------------------------->
+
+
+			<div class="row d-flex flex-nowrap" style="">
+				<img src="img/shouye/videobottom.png" class="w-100" style=" height: 80px;">
+			</div>
+			<!-------------------------------------------- 横屏长图结束 ------------------------------------------------------------------>
+			<div class="row  position-relative" style="margin-top: 20px;width: 1170px;">
+				<div class="jinri">
+					<img src="img/shouye/titleleft.png" style="width: 23px;height: 19px;">
+					<span>原创视频</span>
+
+				</div>
+				<div class="row position-absolute" style="right: 60px;">
+					<span id="shipinM" class="" style="width: 40px;font-size:16px;color: #DA2027;font-weight: normal;">
+						更多
+					</span>
+					<img src="img/shouye/showmore.png" style="width: 26px;height: auto;margin-top: 6px;">
+				</div>
+				<img src="img/shouye/containerxian.png" class="w-100" style="height: 20px;margin-bottom: 15px;">
+				<div class="d-flex justify-content-between w-100">
+					<div class="">
+						<div class="" id="videoContent1">
+
+							<!-- <video width="550" height="412" preload="meta" controls id="video1">
+								<source  id="source1" type="video/mp4">
+								<source  id="source1" type="video/ogg">
+							</video>
+							<div class="video_title" style="width: 500px;">
+								2020年度吉林省省级文化是打发案发生发的士大夫撒旦给发asdfasd
+							</div> -->
+						</div>
+					</div>
+					<div class="d-flex flex-wrap justify-content-between" id="videoContent2" style="width: 530px;margin-top: 5px;">
+						<!-- 						<div class="" >
+							<video width="240" height="180" preload="meta" controls id="video1">
+								<source src="img/111.mp4" id="source2" type="video/mp4">
+								<source src="img/111.mp4" id="source2" type="video/ogg">
+							</video>
+							<div class="video_title">
+								2020年度吉林省省级文化...
+							</div>
+						</div> -->
+						<!-- <div class="">
+							<video width="240" height="180" preload="meta" controls id="video1">
+								<source src="img/111.mp4" id="source1" type="video/mp4">
+								<source src="img/111.mp4" id="source1" type="video/ogg">
+							</video>
+							<div class="video_title">
+								2020年度吉林省省级文化...
+							</div>
+						</div>
+						<div class="" style="margin-top: 20px;">
+							<video width="240" height="180" preload="meta" controls id="video1">
+								<source src="img/111.mp4" id="source1" type="video/mp4">
+								<source src="img/111.mp4" id="source1" type="video/ogg">
+							</video>
+							<div class="video_title">
+								2020年度吉林省省级文化...
+							</div>
+						</div>
+						<div class="" style="margin-top: 20px;">
+							<video width="240" height="180" preload="meta" controls id="video1">
+								<source src="img/111.mp4" id="source1" type="video/mp4">
+								<source src="img/111.mp4" id="source1" type="video/ogg">
+							</video>
+							<div class="video_title">
+								2020年度吉林省省级文化...爱上对方
+							</div>
+						</div>
+ -->
+
+					</div>
+				</div>
+			</div>
+			<!-------------------------------------------- 原创视频结束 ------------------------------------------------------------------>
+
+			<!-- <div class="row" style="margin-top: 20px;">
+				<div class="jinri">
+					今日吉林
+				</div>
+				<img src="img/shouye/containerxian.png" class="w-100" style="height: 20px;margin-bottom: 15px;">
+				<div class="d-flex justify-content-between w-100" style="background:rgba(248,248,248,1);padding: 20px">
+					<div class="d-flex flex-column align-items-center justify-content-center">
+						<div class="">
+							<img id="logoImg0" style="width: 84px;height: 84px;margin-right: 36px;">
+							<img src="img/shouye/code2.png" style="width: 84px;height: 84px;">
+						</div>
+						<div class="text-center" id="logotext0" style="width:212px;font-size:30px;font-weight:bold;color:rgba(51,51,51,1);">
+							
+						</div>
+					</div>
+					<div class="d-flex flex-column align-items-center justify-content-center">
+						<div class="">
+							<img id="logoImg1" style="width: 84px;height: 84px;margin-right: 36px;">
+							<img src="img/shouye/code2.png" style="width: 84px;height: 84px;">
+						</div>
+						<div class="text-center" id="logotext1" style="width:212px;font-size:30px;font-weight:bold;color:rgba(51,51,51,1);">
+
+						</div>
+					</div>
+					<div class="d-flex flex-column align-items-center justify-content-center">
+						<div class="">
+							<img id="logoImg2" style="width: 84px;height: 84px;margin-right: 36px;">
+							<img src="img/shouye/code2.png" style="width: 84px;height: 84px;">
+						</div>
+						<div class="text-center" id="logotext2" style="width:212px;font-size:30px;font-weight:bold;color:rgba(51,51,51,1);">
+
+						</div>
+					</div>
+					<div class="d-flex flex-column align-items-center justify-content-center">
+						<div class="">
+							<img id="logoImg3" style="width: 84px;height: 84px;margin-right: 36px;">
+							<img src="img/shouye/code2.png" style="width: 84px;height: 84px;">
+						</div>
+						<div class="text-center" id="logotext3" style="width:212px;font-size:30px;font-weight:bold;color:rgba(51,51,51,1);">
+
+						</div>
+					</div>
+
+				</div>
+			</div> -->
+			<div class="row py-3" style="border-top: 2px solid #cccccc;border-bottom: 2px solid #cccccc;">
+				<div class="shengjibumen">
+					相关链接
+				</div>
+				<div class="shengjibumen" style="font-size: 20px;margin-left: 30px;" id='shengji'>
+					省级部门
+				</div>
+				<div class="shengjibumen" style="font-size: 20px;" id='difang'>
+					地方网联
+				</div>
+				<div class="shengjibumen" style="font-size: 20px;" id='youqing'>
+					友情链接
+				</div>
+				<div class="">
+					<ul id="addrUl" class="addUl_list d-none">
+				
+					</ul>
+					<ul id="addrUl1" class="addUl_list d-none">
+					
+					</ul>
+					<ul id="addrUl2" class="addUl_list d-none">
+					
+					</ul>
+				
+				</div>
+			</div>
+			<!---------------------------------------------------- 二维码部分结束 ----------------------------------------------------------->
+			<!-- <div class="row" style="margin-top: 30px;border-top: 8px solid #F2F2F1;padding-top: 20px;">
+				<div class="shengjibumen">
+					省级部门
+				</div>
+
+				<div class="">
+					<ul id="addrUl" class="addUl_list list-unstyled d-flex flex-wrap">
+
+					</ul>
+
+				</div>
+				<div class="shengjibumen">
+					地方网联
+				</div>
+
+				<div class="">
+					<ul id="addrUl1" class="addUl_list list-unstyled d-flex flex-wrap">
+
+					</ul>
+
+				</div>
+				<div class="shengjibumen">
+					友情链接
+				</div>
+
+				<div class="">
+					<ul id="addrUl2" class="addUl_list list-unstyled d-flex flex-wrap">
+
+					</ul>
+
+				</div>
+
+			</div> -->
+			<!---------------------------------------------------- 地址链接结束 ---------------------------------------------->
+
+
+		</div>
+		<div id="footerContent">
+
+		</div>
+
+
+		<div class="" style="margin-top: 0px;">
+
+		</div>
+
+
+
+		<!-- <div class="container">
+
+			<div class="card" style="width: 18rem;">
+				<img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+						content.</p>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">Cras justo odio</li>
+					<li class="list-group-item">Dapibus ac facilisis in</li>
+					<li class="list-group-item">Vestibulum at eros</li>
+				</ul>
+				<div class="card-body">
+					<a href="#" class="card-link">Card link</a>
+					<a href="#" class="card-link">Another link</a>
+				</div>
+			</div>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination" id="pagination2">
+
+				</ul>
+			</nav>
+		</div> -->
+
+		<!-- 
+		<div class="w-100" style="height:303px;background:rgba(248,248,248,1);">
+			<div id="footer" class="container">
+				<div class="f_top">
+					<img src="img/shouye/kc01.jpg" style="width:286px;height:89px;">
+				</div>
+				<div class="f_bottom">
+
+				</div>
+			</div>
+		</div> -->
+
+	</body>
+	<script type="text/javascript">
+
+	</script>
+</html>

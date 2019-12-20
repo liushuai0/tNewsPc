@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>今日吉林</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/shouye/index.css" />
+		<script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/shouye/chajian/jqPaginator.js" type="text/javascript" charset="utf-8"></script> <!-- 分页插件 -->
+		<script src="js/erjiPage/lingdaoGroup.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<script>
+		
+	</script>
+	<style type="text/css">
+		.card_list {
+			padding: 10px;
+			width: 700px;
+			padding-right: 50px;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #F2F2F1;
+			margin-bottom: 10px;
+		}
+
+		.cl_title {
+			font-size: 22px;
+			color: #333333;
+			font-weight: 500;
+cursor:pointer;
+		}
+
+		.cl_content {
+			margin-top: 20px;
+		}
+
+		.cl_footer {
+			display: flex;
+			align-items: center;
+			font-size: 15px;
+			color: #666666;
+			margin-top: 20px;
+			position: relative;
+		}
+
+		
+
+		.cl_footer_date {
+			margin-left: 60px;
+		}
+
+		.cl_footer_detail {
+			position: absolute;
+			right: 0;
+			color: #C21B1F;
+			cursor:pointer;
+		}
+
+		.tongzhijianli {
+			font-size: 18px;
+			color: #333333;
+		}
+
+		.jinli_name {
+			margin: 10px auto;
+		}
+	</style>
+	<body>
+		<div class="position-relative">
+			<div id="headerpage" class="">
+<div class="">
+	<div class="" style="background-color: #f8f9fa !important;">
+					<div class="container ">
+						<div class="row">
+							<div class="navbar navbar-light bg-light w-100" style="height: 110px;padding-top: 20px;padding-bottom: 20px;">
+								<img src="img/shouye/headerImg.png" class="h-100">
+								<div class="form-inline">
+									<input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="请输入关键字" value="" aria-label="Search">
+									<button class="btn btn-outline-success my-2 my-sm-0" id="submitBtn" type="submit">Search</button>
+								</div>
+								<div class="row">
+									<div class="d-flex flex-column align-items-center" id="weixin" data-toggle="popover" data-placement="bottom">
+										<img src="img/shouye/weixin.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+										<div style="font-size: 14px;">
+											微信
+										</div>
+									</div>
+									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
+										<img src="img/shouye/weibo.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+										<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+											微博
+										</div>
+									</div>
+									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
+										<img src="img/shouye/shouji.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+										<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+											客户端
+										</div>
+									</div>
+									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
+										<img src="img/shouye/weibo.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+										<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+											抖音
+										</div>
+									</div>
+									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;margin-right: 20px;">
+										<img src="img/shouye/shouji.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
+										<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+											头条
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					</div>
+					<div class="h_top">
+						<div class="container position-relative d-flex align-items-center">
+							<ul class="daohanglan nav nav-pills" id="daohanglan" role="tablist">
+								<!-- <li class="nav-item" onclick="tiaozhuan(0)">
+									<a class="nav-link active" id="nav1" data-toggle="pill"  href="index.html">首页</a>
+								</li> -->
+								
+							</ul>
+							<div class="bg-white" onclick="xialashow()" style="margin: 0 30px; width: 64px;">
+								<img src="img/jiahao.png" style="width: 25px;height: 25px;margin-left: 17px;">
+							</div>
+							
+							<div class="dropdown jilinTop">
+								<button type="" class="bg-white dropdown-toggle" data-toggle="dropdown">
+									<div class="jilinTop">
+										<span>系列日报</span>
+										<img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;">
+									</div>
+								</button>
+								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
+									<a class="dropdown-item" href="http://jlrbszb.chinajilin.com.cn/paperindex.htm" target="_blank">
+										吉林日报
+									</a>
+									<a class="dropdown-item" href="http://epaper.1news.cc/ccrb/" target="_blank">
+										长春日报
+									</a> 
+									<a class="dropdown-item" href="http://szb.shjnet.cn/" target="_blank">
+										江城日报
+									</a> 
+									<a class="dropdown-item" href="http://www.spxww.com/nepaper/sprb/paperindex.htm" target="_blank">
+										四平日报
+									</a> 
+									<a class="dropdown-item" href="http://read.0437.com/reader/" target="_blank">
+										辽源日报
+									</a> 
+									<a class="dropdown-item" href="http://ipaper.hybrb.com/" target="_blank">
+										延边日报
+									</a> 
+									<a class="dropdown-item" href="http://www.thrbs.com/" target="_blank">
+										通化日报
+									</a> 
+									<a class="dropdown-item" href="http://szb.syxww.cn" target="_blank">
+										松原日报
+									</a> 
+									<a class="dropdown-item" href="http://bcrbszb.bcxww.com/" target="_blank">
+										白城日报
+									</a> 
+									<a class="dropdown-item" href="http://szb.cbsrb.com/" target="_blank">
+										长白山日报
+									</a> 
+									<a class="dropdown-item" href="http://124.234.142.113/paperindex.htm" target="_blank">
+										城市晚报
+									</a> 
+									<a class="dropdown-item" href="http://www.dyxw.com/pc/paper/layout/" target="_blank">
+										东亚经贸
+									</a> 
+									<a class="dropdown-item" href="http://jlncb.wsszb.com/" target="_blank">
+										吉林农村报
+									</a>
+							
+								</div>
+							</div>
+							<div class="dropdown jilinTop2">
+								<button type="" class="bg-white dropdown-toggle" data-toggle="dropdown">
+									<div class="jilinTop">
+										<span>集团报网</span>
+										<img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;">
+									</div>
+								</button>
+								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
+									
+							
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container ">
+						<div class="row position-absolute bg-white d-none"  id='xialaNav'  style=" z-index: 999;width: 855px;box-shadow:0px 15px 13px 0px rgba(155,13,21,0.4);">
+							<div class="d-flex bg-white flex-wrap" style="color: #535353;" id="otherNav">
+								<!-- <div class=" px-3" style="height: 40px;line-height: 40px;">
+									延边新闻
+								</div>
+								<div class="" style="height: 18px;margin-top: 6px;">
+									|
+								</div>
+								<div class=" px-3" style="height: 40px;line-height: 40px;">
+									延边新闻
+								</div> -->
+							</div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<img src="img/shouye/banner.jpg" class="" style="height: 240px;width: 100%;margin-top: 10px;">
+							</div>
+						</div>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<div class="container">
+			<div class="row flex-nowrap justify-content-between " style="margin-top: 15px;">
+				<div class="d-flex flex-column">
+					<!--------------------------------- 面包导航条 ------------------------------------------->
+					<!-- <div class="d-flex align-items-center" style="font-size:18px;height:70px;color:#666666;padding-bottom: 20px; border-bottom: 2px solid #F2F2F1;">
+						<span>您当前的位置：</span>
+						<nav aria-label="breadcrumb" style="height: 50px;">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">首页</a></li>
+								<li class="breadcrumb-item"><a href="index1.html">延边新闻</a></li>
+								<li class="breadcrumb-item active" aria-current="page">省内新闻</li>
+							</ol>
+						</nav>
+					</div> -->
+					<!---------------------------------- 文章列表 ------------------------------------------------->
+					<div class="" id='leaderlist'>
+						<!-- <div class='card_list'>
+							<div class='cl_title'>
+								深入贯彻落实中央一号文件精神 加快率先实现农业现代化步伐
+							</div>
+							<div class='cl_content'>
+								11月10日至11日，以教育部副部长孙尧为组长的2019年中央一号文件贯彻落实情况第5督查组到我省开展实地督查。
+							</div>
+							<div class='cl_footer'>
+								<div class='cl_footer_name'>
+									今日吉林网
+								</div>
+								<div class='cl_footer_date'>
+									2019-11-22 12:46
+								</div>
+								<div class='cl_footer_detail'>
+									【详细】
+								</div>
+							</div>
+						</div> -->
+						
+					</div>
+					
+					
+		<!-- 			此处为分页	此处为分页	此处为分页	此处为分页	此处为分页	此处为分页 -->
+					<!-- <div class="mt-5 mx-auto">
+						<nav aria-label="Page navigation example">
+							<ul class="pagination" id="pagination2">
+
+							</ul>
+						</nav>
+					</div> -->
+				</div>
+				<!---------------------------- 右侧导航栏 ------------------------------->
+				<div class="">
+
+
+					<div class="d-flex flex-column tongzhijianli" style="width: 420px;height: 600px;padding: 10px;">
+						<div class="jinri" style="white-space: nowrap;margin-bottom: 20px;">
+							<span id='leaderName'></span> 同志简历
+						</div>
+						<img id="leaderPhoto" class="mx-auto" style="width: 193px;height: 256px;">
+						<div class="mx-auto jinli_name" id='leaderName2'>
+							
+						</div>
+						<div class="jinli_content" id="leaderContent">
+							<!-- 1955年10月生，内蒙古鄂托克前旗人，1976年11月参加工作，中共党员，研究生学历。现为十九届中央委员，吉林省委书记、省人大常委会主任。 -->
+						</div>
+					</div>
+					<!-- <div class="d-flex flex-column tongzhijianli" style="width: 420px;padding: 30px;">
+						<div class="jinri" style="white-space: nowrap;margin-bottom: 50px;">
+							最新图集
+						</div>
+						<div class="d-flex flex-column align-items-center">
+							<img src="img/shouye/fangtanImg.png" style="width: 293px;height: 163px;">
+							<div class="mt-2" style="font-size:18px; color: #666666;">
+								长春供热开启“ 云 ”时代
+							</div>
+						</div>
+						<div class="d-flex flex-column align-items-center">
+							<img src="img/shouye/fangtanImg.png" style="width: 293px;height: 163px;">
+							<div class="mt-2" style="font-size:18px; color: #666666;">
+								长春供热开启“ 云 ”时代
+							</div>
+						</div>
+						<div class="d-flex flex-column align-items-center">
+							<img src="img/shouye/fangtanImg.png" style="width: 293px;height: 163px;">
+							<div class="mt-2" style="font-size:18px; color: #666666;">
+								长春供热开启“ 云 ”时代
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+
+		</div>
+		<div id="footer">
+
+		</div>
+	</body>
+</html>
