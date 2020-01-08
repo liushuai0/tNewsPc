@@ -1,7 +1,7 @@
 $(function() {
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/home/index/nav",
+		url: "http://admin.jrjl.net/api/home/index/nav",
 		dataType: "json",
 		data: {
 

@@ -14,7 +14,7 @@ $('.dropdown-toggle').dropdown();
 	//函数
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/home/pc/nav",
+		url: "http://admin.jrjl.net/api/home/pc/nav",
 		dataType: "json",
 		data: {
 
@@ -25,7 +25,7 @@ $('.dropdown-toggle').dropdown();
 		success: function(res) {
 			var headernav = res.data.navList
 			var othernav=res.data.othernav
-			console.log(headernav);
+			
 			for (var i = 0; i < headernav.length; i++) {
 				$(".daohanglan").append("<li class='nav-item' onclick='tiaozhuan(" + headernav[i].id +
 					")'><a class='nav-link daohanglanaaa' id='nav" + headernav[i].id + "' data-toggle='pill' href='#'>" +
@@ -36,9 +36,22 @@ $('.dropdown-toggle').dropdown();
 				$("#otherNav").append("<div class='px-3' onclick='leibiaoToDetail(" + othernav[i].id +")' style='height: 40px;line-height: 40px;cursor:pointer;'>"+othernav[i].title+"</div><div style='height: 18px;margin-top: 6px;'>|</div>")
 			}
 			// $("#nav1").addClass("active");  
-			console.log("12312312");
+			//带首页
 			if(getUrlParam('shouye')){
 				$("#nav1000").addClass("active")
+				$("#miaobaoxue").append("<li class='breadcrumb-item'><a href='index.html'>首页</a></li>")
+				for(let i=0;i<othernav.length;i++){
+					if(othernav[i].id==getUrlParam('nav_id')){
+						$("#miaobaoxue").append("<li class='breadcrumb-item active' aria-current='page'>"+othernav[i].title+"</li>")
+					}
+				}
+			}else{
+				$("#miaobaoxue").append("<li class='breadcrumb-item'><a href='index.html'>首页</a></li>")
+				for(let i=0;i<headernav.length;i++){
+					if(headernav[i].id==getUrlParam('nav_id')){
+						$("#miaobaoxue").append("<li class='breadcrumb-item miabobaoli active' aria-current='page'>"+headernav[i].title+"</li>")
+					}
+				}
 			}
 			$("#nav" + getUrlParam('nav_id') + "").addClass("active")
 
@@ -48,7 +61,13 @@ $('.dropdown-toggle').dropdown();
 			//请求出错处理
 		}
 	});
-
+	//触摸显示微信二维码
+	$('#weixin').popover({
+		trigger: 'hover', //鼠标以上时触发弹出提示框
+		html: true, //开启html 为true的话，data-content里就能放html代码了
+		content: "<img src='img/shouye/code2.png' style='width:180px;height:180px' class=''>"
+	});
+	
 	show()
 	console.log("show下");
 	(function ($) {
@@ -321,6 +340,7 @@ $('.dropdown-toggle').dropdown();
     };
 
 })(jQuery);
+	
 	$.jqPaginator('#pagination2', {
 		totalPages: parseInt(getCookie("totalPages"))  ,
 		visiblePages:parseInt(getCookie("visiblePages"))  ,
@@ -332,13 +352,13 @@ $('.dropdown-toggle').dropdown();
 		page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
 		onPageChange: function(num, type) {
 			$('#p2').text(type + '：' + num);
-			console.log(num);
+			
 			var cate_id = getUrlParam("nav_id")
 			
 			//获取二级页文章列表
 			$.ajax({
 				type: "post", //请求方式
-				url: "http://ji.agampai.cn/api/home/pc/articlelist",
+				url: "http://admin.jrjl.net/api/home/pc/articlelist",
 				dataType: "json",
 				data: {
 					cate_id,
@@ -348,7 +368,7 @@ $('.dropdown-toggle').dropdown();
 					//请求前的处理
 				},
 				success: function(res) {
-					console.log(res);
+					
 					let cardList = res.data.list
 					$("#contentList").empty()
 					for (let index = 0; index < cardList.length; index++) {
@@ -384,17 +404,17 @@ function getUrlParam(id) {
 
 }
 function leibiaoToDetail(cate_id){
-	console.log(cate_id);
+	
 	window.location.href="erjiList.html?nav_id="+cate_id+"&shouye="+1
 }
 function xialashow(){
-	console.log("dfasfesasdf");
+	
 	$("#xialaNav").toggleClass("d-none")
 }
 
 function tiaozhuan(index) {
 
-	console.log(index);
+	
 	if (index == 1000) {
 		window.location.href = "index.html"
 	} else {
@@ -416,11 +436,11 @@ function show() {
 	console.log("当前是二级页面");
 
 	var cate_id = getUrlParam("nav_id")
-	console.log(cate_id);
+	
 	//获取二级页文章列表
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/home/pc/articlelist",
+		url: "http://admin.jrjl.net/api/home/pc/articlelist",
 		dataType: "json",
 		async: false,
 		data: {
@@ -430,8 +450,8 @@ function show() {
 			//请求前的处理
 		},
 		success: function(res) {
-			console.log("141234123");
-			console.log(res);
+		
+			
 			
 				//新闻列表遍历
 				let cardList = res.data.list
@@ -456,8 +476,8 @@ function show() {
 				
 				//最新新闻处理
 				var zxxinwenList = res.data.newslist
-				console.log("---------------------");
-				console.log(zxxinwenList);
+				
+				
 				$("#zuixinImg").attr("src", zxxinwenList[0].thumbnail)
 				var zuixinnum
 				if (zxxinwenList.length > 6) {
@@ -471,7 +491,7 @@ function show() {
 						.title + " </a></div>")
 				}
 				//热点新闻处理 fabuswiper1
-				var fabuList = res.data.hotnewslist
+				var fabuList = res.data.hotnewslist.data
 				// for (let index = 0; index < 3; index++) {
 				// 	if (index == 0) {
 				// 		$("#fabuswiper1").append(
@@ -482,7 +502,7 @@ function show() {
 				// 			fabuList[0].photos_url[index] + "' alt='Second slide'></div>")
 				// 	}
 				// }
-				
+				$("#redianaaa").append(res.data.hotnewslist.title)
 				$("#redianImg").attr("src", fabuList[0].thumbnail)
 				$("#fabuTitle1").append(fabuList[0].title)
 				$("#fabuTitle1").attr("onclick", "shenduToDetail(" + fabuList[0].id + ")")
@@ -501,14 +521,14 @@ function show() {
 						"'>" + fabuList[i].title + "</a> </div>")
 				}
 				//深度处理
-				var shenduList = res.data.shendulist
-				console.log(shenduList);
-				var shendunum
+				var shenduList = res.data.shendulist.data
 				
+				var shendunum
+				$("#shenduTitleaaa").append(res.data.shendulist.title)
 				for (let index = 0; index < 2; index++) {
 					$("#shenduq2").append("<div><img onclick='shenduToDetail(" + shenduList[index].id + ")' src=" + shenduList[index]
 						.thumbnail +
-						" style='width: 135px;height: 77px;'><div class='text-center fabutext2' onclick='shenduToDetail(" + shenduList[
+						" style='width: 135px;height: 77px;'><div class='text-left fabutext2' onclick='shenduToDetail(" + shenduList[
 							index].id + ")' style='font-size: 10px;width: 135px;margin-top: 10px;'>" +
 						shenduList[index].title + "</div></div>")
 				
@@ -552,4 +572,34 @@ function show() {
 
 		}
 	})
+	$.ajax({
+		type: "post", //请求方式
+		url: "http://admin.jrjl.net/api/home/pc/banner2",
+		dataType: "json",
+		
+		data: {
+			
+		}, //请求参数
+		beforeSend: function() {
+			//请求前的处理
+		},
+		success: function(res) {
+			console.log(res.data.data);
+			let imglist=res.data.data
+			
+			$("#ggimg").attr('src',imglist.thumbnail)
+			if(imglist.url){
+				$("#ggimg").attr('onclick',"ggtiaozhuan('"+imglist.url+"')" )
+			}
+			
+		}
+	})	
+
+	
+	
+	
 }
+function ggtiaozhuan(url) {
+	window.open(url)
+}
+

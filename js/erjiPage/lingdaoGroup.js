@@ -24,7 +24,7 @@ $(function() {
 	//函数
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/home/pc/nav",
+		url: "http://admin.jrjl.net/api/home/pc/nav",
 		dataType: "json",
 		data: {
 	
@@ -82,7 +82,7 @@ function show(){
 	console.log("领导报道集");
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/home/pc/leaderlist",
+		url: "http://admin.jrjl.net/api/home/pc/leaderlist",
 		dataType: "json",
 		data: {
 			id:getUrlParam("id")

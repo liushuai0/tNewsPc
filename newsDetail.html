@@ -18,61 +18,62 @@
 	<style type="text/css">
 		.news_title {
 			width: 759px;
-			text-align: center;
+			text-align: left;
 			font-size: 31px;
 			font-family: Source Han Sans SC;
 			font-weight: bold;
 			color: rgba(51, 51, 51, 1);
-			text-indent: 60px;
+			
 		}
 	</style>
 	<body>
-		<div class="position-relative" style="height: 480px;">
+		<div class="position-relative">
 			<div id="headerpage" class="">
 				<div class="">
 					<div class="" style="background-color: #f8f9fa !important;">
 					<div class="container ">
 						<div class="row">
-							<div class="navbar navbar-light bg-light w-100" style="height: 110px;padding-top: 20px;padding-bottom: 20px;">
-								<img src="img/shouye/headerImg.png" class="h-100">
-								<div class="form-inline">
-									<input class="form-control mr-sm-2" type="search" id="searchInput" placeholder="请输入关键字" value="" aria-label="Search">
-									<button class="btn btn-outline-success my-2 my-sm-0" id="submitBtn" type="submit">Search</button>
-								</div>
-								<div class="row">
-									<div class="d-flex flex-column align-items-center" id="weixin" data-toggle="popover" data-placement="bottom">
-										<img src="img/shouye/weixin.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
-										<div style="font-size: 14px;">
-											微信
-										</div>
+								<div class="navbar navbar-light bg-light w-100" style="height: 80px;padding-top: 10px;padding-bottom: 10px;">
+									<img src="img/shouye/headerImg.png" class="navLogo">
+									<div class="form-inline">
+										<input class="form-control mr-sm-2" style="width: 350px;" type="search" id="searchInput" placeholder="请输入关键字"
+										 value="" aria-label="Search">
+										<button class="btn btn-outline-success my-2 my-sm-0" id="submitBtn" type="submit">Search</button>
 									</div>
-									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
-										<img src="img/shouye/weibo.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
-										<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
-											微博
+									<div class="row">
+										<div class="d-flex flex-column align-items-center" id="weixin" data-toggle="popover" data-placement="bottom">
+											<img src="img/shouye/weixin.png" style="width: 33px;height: 33px;margin-bottom: 5px;">
+											<div style="font-size: 14px;">
+												微信
+											</div>
 										</div>
-									</div>
-									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
-										<img src="img/shouye/shouji.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
-										<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
-											客户端
+										<div class="d-flex flex-column align-items-center" style="margin-left: 30px;">
+											<img src="img/shouye/weibo.png" style="width: 33px;height: 33px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												微博
+											</div>
 										</div>
-									</div>
-									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;">
-										<img src="img/shouye/weibo.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
-										<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
-											抖音
+										<div class="d-flex flex-column align-items-center" style="margin-left: 30px;">
+											<img src="img/shouye/shouji.png" style="width: 33px;height: 33px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												客户端
+											</div>
 										</div>
-									</div>
-									<div class="d-flex flex-column align-items-center" style="margin-left: 60px;margin-right: 20px;">
-										<img src="img/shouye/shouji.png" style="width: 43px;height: 43px;margin-bottom: 5px;">
-										<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
-											头条
+										<div class="d-flex flex-column align-items-center" style="margin-left: 30px;">
+											<img src="img/douyin.png" style="width: 33px;height: 33px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="weibo" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												抖音
+											</div>
+										</div>
+										<div class="d-flex flex-column align-items-center" style="margin-left: 30px;margin-right: 20px;">
+											<img src="img/toutiao.png" style="width: 33px;height: 33px;margin-bottom: 5px;">
+											<div style="font-size: 14px;" id="kehuduan" data-toggle="popover" data-placement="bottom" title="Tooltip on bottom">
+												头条
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 						</div>
 					</div>
 					<div class="h_top">
@@ -80,71 +81,76 @@
 							<ul class="daohanglan nav nav-pills" id="daohanglan" role="tablist">
 								<!-- <li class="nav-item" onclick="tiaozhuan(0)">
 									<a class="nav-link active" id="nav1" data-toggle="pill"  href="index.html">首页</a>
+								</li>
+								<li class="nav-item" onclick="tiaozhuan(0)">
+									<a class="nav-link active" id="nav1" data-toggle="pill"  href="index.html">首页</a>
 								</li> -->
 							</ul>
-							<div class="bg-white" onclick="xialashow()" style="margin: 0 30px; width: 64px;">
-								<img src="img/jiahao.png" style="width: 25px;height: 25px;margin-left: 17px;">
+							<div class="bg-white" onclick="xialashow()" style="margin: 0 30px; width: 24px;">
+								<img src="img/jiahao.png" style="width: 20px;height: 20px;margin-left: 2px;margin-bottom: 2px;">
 							</div>
-							<div class="dropdown jilinTop">
-								<button type="" class="bg-white dropdown-toggle" data-toggle="dropdown">
-									<div class="jilinTop">
-										<span>系列日报</span>
-										<img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;">
+							<div class="jilinTop" style="margin-top: 2px;">
+								<!-- <button type="" class="bg-white navBtn"> -->
+									<div class="">
+										<span><a style="color: #C21B1F;text-decoration: none;margin-left: -5px;" href="http://jlrbszb.chinajilin.com.cn/paperindex.htm"
+											 target="_blank">
+												吉林日报
+											</a></span>
+										<!-- <img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;"> -->
+									</div>
+								<!-- </button> -->
+								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
+					
+								</div>
+							</div>
+							<div class="dropdown jilinTop2" style="margin-top: 2px;">
+								<button type="" class="bg-white dropdown-toggle navBtn" data-toggle="dropdown">
+									<div class="jilinTop" style="background: none;padding-top: 3px;">
+										<span>集团报网</span>
+										<img src="img/shouye/xialaImg.png" style="width: 14px;height: 14px;margin-left: 6px;">
 									</div>
 								</button>
-								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
+								<div class="dropdown-menu" style="width: 90px !important;min-width:90px">
 									<a class="dropdown-item" href="http://jlrbszb.chinajilin.com.cn/paperindex.htm" target="_blank">
 										吉林日报
 									</a>
 									<a class="dropdown-item" href="http://epaper.1news.cc/ccrb/" target="_blank">
 										长春日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://szb.shjnet.cn/" target="_blank">
 										江城日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://www.spxww.com/nepaper/sprb/paperindex.htm" target="_blank">
 										四平日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://read.0437.com/reader/" target="_blank">
 										辽源日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://ipaper.hybrb.com/" target="_blank">
 										延边日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://www.thrbs.com/" target="_blank">
 										通化日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://szb.syxww.cn" target="_blank">
 										松原日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://bcrbszb.bcxww.com/" target="_blank">
 										白城日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://szb.cbsrb.com/" target="_blank">
 										长白山日报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://124.234.142.113/paperindex.htm" target="_blank">
 										城市晚报
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://www.dyxw.com/pc/paper/layout/" target="_blank">
 										东亚经贸
-									</a> 
+									</a>
 									<a class="dropdown-item" href="http://jlncb.wsszb.com/" target="_blank">
 										吉林农村报
 									</a>
-							
-								</div>
-							</div>
-							<div class="dropdown jilinTop2">
-								<button type="" class="bg-white dropdown-toggle" data-toggle="dropdown">
-									<div class="jilinTop">
-										<span>集团报网</span>
-										<img src="img/shouye/xialaImg.png" style="width: 16px;height: 16px;margin-left: 10px;">
-									</div>
-								</button>
-								<div class="dropdown-menu" style="width: 126px !important;min-width:126px">
-									
-							
+					
 								</div>
 							</div>
 						</div>
@@ -165,7 +171,7 @@
 						</div>
 						<div class="container">
 							<div class="row">
-								<img src="img/shouye/banner.jpg" class="" style="height: 240px;width: 100%;margin-top: 10px;">
+								<img id='ggimg' class="" style="height: 100px;width: 100%;margin-top: 10px;">
 							</div>
 						</div>
 					</div>
@@ -176,7 +182,7 @@
 		<div class="container">
 			<div class="row flex-nowrap">
 				<!------------------------------------ 中间内容 ------------------------------------------>
-				<div class="d-flex flex-column" style="margin-top: 46px; width: 820px;">
+				<div class="d-flex flex-column" style=" width: 820px;">
 					<!--------------------------------- 面包导航条 ------------------------------------------->
 					<!-- <div class="d-flex align-items-center" style="font-size:18px;height:50px;color:#666666;">
 						<span>您当前的位置：</span>
@@ -189,12 +195,20 @@
 						</nav>
 					</div> -->
 					<!---------------------------------- 文章内容 ------------------------------------------->
-
-					<div class="newsContent" style="border: 2px solid #f2f1f1;padding: 30px;padding-bottom: 80px;">
+					<div class="jinri" style="margin-top: 18px;margin-bottom: 15px;">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb" id='miaobaoxue'  style="background-color: #f9f9f9;">
+								
+								<!-- <li class="breadcrumb-item"><a href="#">Library</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Data</li> -->
+							</ol>
+						</nav>
+					</div>
+					<div class="newsContent" style="border: 2px solid #f2f1f1;padding: 30px;padding-bottom: 80px;margin-top: 10px;">
 						<div class="news_title" id="newsTitle">
 							<!-- 吉林省城乡居民医保开通4种缴费渠道 12月1日起开始集中缴费 -->
 						</div>
-						<div class="text-right mb-5 mt-3">
+						<div class="text-right mb-3 pb-3 border-bottom mt-3">
 							<span id="newsDate">
 								<!-- 2019-11-22 12:46 --></span>
 							<!-- <span style="margin-left: 50px;" id="newslaiyuan">来源：
@@ -223,17 +237,29 @@
 							分享到手机
 						</div>
 					</div>
+<div class="xiangguanNews">
+				<div class="jinri">
+					相关新闻
+				</div>
+				<div class="xiangguan_ul" id="tuijianList">
 
+					
+						
+						<!-- <div class="nav-item position-relative"><span class='dian'>·</span><a class='diva' href="#"> 习近平会见统一俄罗斯党代表团 <span class="xiangguanul_date">2019-11-25 18:37 </span></a></div>
+						<div class="nav-item position-relative"><span class='dian'>·</span><a class='diva' href="#"> 播种新希望，习近平的寄语情深意长 <span class="xiangguanul_date">2019-11-24 21:18 </span></a></div>
+				 -->
+				</div>
+			</div>
 
 				</div>
 				<!------------------------------------------ 文章侧栏 ----------------------------------------------->
-				<div class="row" style="width: 310px;margin-left: 35px;margin-top: 40px;">
+				<div class="row" style="width: 310px;margin-left: 35px;margin-top: 18px;">
 					<div class="d-flex flex-column">
-						<img src="img/shouye/yaowenrightnav.png" class="yaowen_rightNav_img1">
-						<img src="img/shouye/yaowenrightnav2.png" class="yaowen_rightNav_img2">
-						<div class="" style="width:298px;margin-top: 5px;padding: 8px;">
-							<div id="shenduTitle" class="jinri" style="margin-bottom: 20px;">
-								深度调查
+						<!-- <img src="img/shouye/yaowenrightnav.png" class="yaowen_rightNav_img1"> -->
+						<img id='ggimg2' class="yaowen_rightNav_img2">
+						<div class="" style="width:310px;margin-top: 5px;padding: 8px;box-shadow:-3px 4px 35px 0px rgba(192,192,192,0.19) !important;">
+							<div id="shenduTitlebbb" class="jinri" style="margin-bottom: 20px;">
+								
 							</div>
 						
 							<div class="" style="width:298px;">
@@ -260,16 +286,16 @@
 								</div>
 							</div>
 						</div>
-						<div class="" style="width:310px;margin-top: 10px;padding: 8px;">
-							<div class="jinri" style="margin-bottom: 20px;">
-								热点新闻
+						<div class="" style="width:310px;margin-top: 10px;padding: 8px;box-shadow:-3px 4px 35px 0px rgba(192,192,192,0.19);">
+							<div class="jinri" id='redianbbb' style="margin-bottom: 20px;">
+								
 							</div>
 							<div class="" style="width: 295px;height: 173px;">
 								<img id="redianImg" style="width: 295px;height: 173px;" />
 							</div>
 						
 							<div id="fabuTitle1" class="" style="cursor:pointer;width:270px;font-size:18px;color:rgba(102,102,102,1);font-weight:500;text-align: center;margin-bottom: 15px;">
-								<!-- 长春供热开启“ 云 ”时代 -->
+								
 							</div>
 							<div class="d-flex justify-content-between" id="fabutext2Cont1" style="width: 295px;">
 								<!-- <div class="">
@@ -295,24 +321,24 @@
 								<li><a href="">我省连续6个月向困难群众发放临时</a></li> -->
 							</div>
 						</div>
-						<div class="" style="width:310px;padding: 15px;margin-top: 10px; background-color: #FFFFFF;">
+						<div class="" style="width:310px;padding: 15px;margin-top: 10px; background-color: #FFFFFF;box-shadow:-3px 4px 35px 0px rgba(192,192,192,0.19) !important;">
 							<div class="jinri">
 								联系我们
 							</div>
 							<div class="detail_lianxi">
-								联系方式：0431-55224485
+								电话：0431-88600377
 							</div>
 							<div class="detail_lianxi">
-								邮箱网址：news @jinrijilin.com.cn
+								邮箱：jrjl0431@163.com
 							</div>
-							<div class="detail_lianxi d-flex" style="">
-								<div class="" style="white-space: nowrap;">通讯网址：</div>
+							<div class="detail_lianxi d-flex">
+								<div class="" style="white-space: nowrap;">地址：</div>
 								<div class="">
-									长春市经济技术开发区世纪大街 与营口路交会，总部基地C区A1栋
+									吉林省长春市高新技术产业开发区火炬路1518号 吉林日报社
 								</div>
 							</div>
 							<div class="d-flex justify-content-between mt-3">
-								<div class="d-flex flex-column align-items-center">
+								<!-- <div class="d-flex flex-column align-items-center">
 									<img src="img/shouye/code2.png" style="width: 106px;height: 106px;">
 									<div class="lianxi_text" style="font-size:14px;color: #848484 ;">
 										联系我们
@@ -323,7 +349,8 @@
 									<div class="lianxi_text" style="font-size:14px;color: #848484 ;">
 										联系我们
 									</div>
-								</div>
+								</div> -->
+								<img src="img/navcode.jpg" style="width: 100%;height: auto;" >
 						
 							</div>
 						</div>
@@ -331,19 +358,7 @@
 				</div>
 			</div>
 			<!------------------------------------ 相关新闻推荐 ---------------------------------------------->
-			<div class="xiangguanNews">
-				<div class="jinri">
-					相关新闻
-				</div>
-				<div class="xiangguan_ul" id="tuijianList">
-
-					
-						
-						<!-- <div class="nav-item position-relative"><span class='dian'>·</span><a class='diva' href="#"> 习近平会见统一俄罗斯党代表团 <span class="xiangguanul_date">2019-11-25 18:37 </span></a></div>
-						<div class="nav-item position-relative"><span class='dian'>·</span><a class='diva' href="#"> 播种新希望，习近平的寄语情深意长 <span class="xiangguanul_date">2019-11-24 21:18 </span></a></div>
-				 -->
-				</div>
-			</div>
+			
 
 			<!------------------------------------ 为你推荐 ---------------------------------------------->
 			<div class="" style="border-bottom: 2px solid #F2F2F1;padding-bottom: 40px;">

@@ -8,7 +8,7 @@ $(function() {
 	$("#footer").load("footer.html");
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/home/index/nav",
+		url: "http://admin.jrjl.net/api/home/index/nav",
 		dataType: "json",
 		data: {
 
@@ -67,7 +67,7 @@ function show() {
 
 	$.ajax({
 		type: "post", //请求方式
-		url: "http://ji.agampai.cn/api/portal/articles/read",
+		url: "http://admin.jrjl.net/api/portal/articles/read",
 		dataType: "json",
 		data: {
 			id: getUrlParam('id') //获取地址栏参数
